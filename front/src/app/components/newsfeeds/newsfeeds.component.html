@@ -1,0 +1,6 @@
+<div id="newsfeeds">
+  <article *ngFor="let newsfeed of newsfeeds" class="newsfeed">
+    <p class="message">{{newsfeed.message}}</p>
+    <p class="createdAt">{{newsfeed.createdAt.toLocaleString()}}</p>
+  </article>
+</div>
