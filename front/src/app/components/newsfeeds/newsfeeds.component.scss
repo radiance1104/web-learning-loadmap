@@ -1,0 +1,23 @@
+#newsfeeds {
+  padding: 20px;
+  background-color: #1877f2;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  .newsfeed {
+    width: 100%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    .message {
+      color: #1c1c1c;
+    }
+    .createdAt {
+      color: #a0a0a0;
+      font-size: 10px;
+      text-align: right;
+    }
+  }
+}

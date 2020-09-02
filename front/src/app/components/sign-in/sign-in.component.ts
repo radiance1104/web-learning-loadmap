@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,9 +10,17 @@ export class SignInComponent implements OnInit {
   email = '';
   password = '';
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
+  onClickSignIn() {
+    if (this.email !== '' && this.password !== '') {
+      // Go to newsfeeds page.
+      this.router.navigate(['./newsfeeds']);
+    }
+  }
 }
