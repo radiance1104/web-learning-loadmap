@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { NewsfeedsComponent } from './components/newsfeeds/newsfeeds.component';
+import { DateToStringPipe } from './pipes/date-to-string.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
     NewsfeedsComponent,
+    DateToStringPipe,
   ],
   imports: [
     BrowserModule,
