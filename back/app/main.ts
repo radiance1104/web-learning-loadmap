@@ -1,1 +1,4 @@
-console.log('Hello World !');
+import {Rest} from './rest';
+
+const rest = new Rest();
+rest.start();
