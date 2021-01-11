@@ -27,4 +27,20 @@ export class RestService {
       });
     });
   }
+
+  async createNewsFeed(message: string): Promise<Response<null>> {
+    return new Promise((resolve, reject) => {
+      const url = environment.rest.domain + '/newsfeeds';
+      const body = {
+        message: message,
+        createdAt: new Date()
+      };
+      this.httpClient.post(url, body).toPromise().then(response => {
+        resolve(new Response(null));
+      }).catch(error => {
+        console.error(error);
+        reject(error);
+      });
+    });
+  }
 }
