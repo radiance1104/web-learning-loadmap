@@ -2,6 +2,7 @@ import * as core from "express-serve-static-core";
 import * as http from "http";
 import express = require('express');
 import bodyParser = require('body-parser');
+import joi = require('joi');
 import {environment} from '../environment';
 
 export class Rest {
@@ -45,6 +46,26 @@ export class Rest {
         response.send(newsfeeds);
       } catch (error) {
         response.sendStatus(500);
+      }
+    });
+    app.post('/newsfeeds', (request, response, next) => {
+      try {
+          const body = request.body;
+          console.log(body);
+          // パラメータのフォーマットを定義
+          const scheme = joi.object({
+            message: joi.string().required(),
+            createdAt: joi.date().required()
+          });
+          // バリデーション
+          const {error, value} = scheme.validate(body);
+          if (error) {
+            response.sendStatus(400);
+          } else {
+            response.sendStatus(200);
+          }
+      } catch (error) {
+          response.sendStatus(500);
       }
     });
   }
