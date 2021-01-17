@@ -23,4 +23,9 @@ export class SignInComponent implements OnInit {
       this.router.navigate(['./newsfeeds']);
     }
   }
+
+  isEnalbeSignInButton(): boolean {
+    return this.email && this.email.length > 0
+            && this.password && this.password.length > 0;
+  }
 }
