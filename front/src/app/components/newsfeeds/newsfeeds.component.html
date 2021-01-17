@@ -1,6 +1,6 @@
 <div id="newsfeeds">
   <textarea id="post-message" placeholder="message ..." [(ngModel)]="message"></textarea><br>
-  <div id="post-button"><button (click)="onClickPost()">POST</button></div>
+  <div id="post-button"><button (click)="onClickPost()" [disabled]="!message || message.length === 0">POST</button></div>
 
   <ng-container *ngIf="newsfeeds && newsfeeds.newsfeeds">
     <article *ngFor="let newsfeed of newsfeeds.newsfeeds" class="newsfeed">
